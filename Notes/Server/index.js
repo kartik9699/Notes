@@ -4,7 +4,13 @@ const cors = require("cors");
 const app = express();
 const PORT = 4000;
 mongodb();
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://notes-sigma-tan.vercel.app/?vercelToolbarCode=z2FkIwy0emo6Kdw"],
+    methods:["GET","POST"],
+credentials:true
+  }
+));
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
